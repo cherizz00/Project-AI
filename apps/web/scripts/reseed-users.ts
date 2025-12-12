@@ -6,7 +6,7 @@ const { promisify } = require("util");
 const db = new PrismaClient();
 const scryptAsync = promisify(scrypt);
 
-async function hashPassword(password) {
+async function hashPassword(password: string) {
     const salt = randomBytes(16).toString("hex");
     const derivedKey = await scryptAsync(password, salt, 64);
     return `${salt}:${derivedKey.toString("hex")}`;
