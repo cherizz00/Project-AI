@@ -6,5 +6,5 @@
             "use": "@vercel/next"
         }
     ],
-    "outputDirectory": ".next"
+    "outputDirectory": "apps/web/.next"
 }
