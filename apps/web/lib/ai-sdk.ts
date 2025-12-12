@@ -1,7 +1,7 @@
 import { createGroq } from '@ai-sdk/groq';
 
 const groq = createGroq({
-    apiKey: process.env.GROQ_API_KEY,
+    apiKey: process.env.GROQ_API_KEY || "mock_key",
 });
 
 export const model = groq('llama-3.3-70b-versatile');
