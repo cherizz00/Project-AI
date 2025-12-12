@@ -1,0 +1,19 @@
+{
+    "name": "ai-interview-assistant",
+    "version": "0.0.0",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "dev:web": "npm run dev --workspace=@ai-interview/web",
+        "dev:ext": "npm run dev --workspace=@ai-interview/extension",
+        "build": "npm run build --workspaces",
+        "test": "npm run test --workspaces"
+    },
+    "dependencies": {
+        "@openrouter/sdk": "^0.2.9",
+        "@prisma/client": "^6.19.0"
+    }
+}
