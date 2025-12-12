@@ -15,6 +15,7 @@
     "@ai-sdk/groq": "^2.0.33",
     "@next-auth/prisma-adapter": "^1.0.7",
     "@openrouter/ai-sdk-provider": "^1.5.2",
+    "@openrouter/sdk": "^0.2.9",
     "@prisma/client": "^6.19.0",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-dialog": "^1.1.15",
