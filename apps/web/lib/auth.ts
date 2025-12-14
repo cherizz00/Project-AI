@@ -5,6 +5,10 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { db } from "@/lib/db"
 import { verifyPassword } from "@/lib/password"
 
+if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
+    throw new Error("Missing GOOGLE_CLIENT_ID or GOOGLE_CLIENT_SECRET environment variables");
+}
+
 console.log("[AUTH] GOOGLE_CLIENT_ID Loaded:", !!process.env.GOOGLE_CLIENT_ID);
 console.log("[AUTH] GOOGLE_CLIENT_SECRET Loaded:", !!process.env.GOOGLE_CLIENT_SECRET);
 console.log("[AUTH] NEXTAUTH_URL:", process.env.NEXTAUTH_URL);
