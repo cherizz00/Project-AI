@@ -5,6 +5,14 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { db } from "@/lib/db"
 import { verifyPassword } from "@/lib/password"
 
+if (!process.env.DATABASE_URL) {
+    throw new Error("Missing DATABASE_URL environment variable");
+}
+
+if (!process.env.NEXTAUTH_SECRET && process.env.NODE_ENV === "production") {
+    console.warn("WARN: NEXTAUTH_SECRET is not set. This is required for production.");
+}
+
 if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
     throw new Error("Missing GOOGLE_CLIENT_ID or GOOGLE_CLIENT_SECRET environment variables");
 }
